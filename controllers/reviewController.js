@@ -3,7 +3,7 @@ const catchAsync = require('./../utils/catchAsync');
 
 exports.getAllReviews = catchAsync(async (req, res, next) => {
   const reviews = await Review.find();
-  res.json({
+  res.status(200).json({
     status: 'success',
     results: this.getAllReviews.length,
     data: {
@@ -13,7 +13,7 @@ exports.getAllReviews = catchAsync(async (req, res, next) => {
 });
 exports.createReviews = catchAsync(async (req, res, next) => {
   const newReview = await Review.find();
-  res.json({
+  res.status(201).json({
     status: 'success',
     results: this.getAllReviews.length,
     data: {
