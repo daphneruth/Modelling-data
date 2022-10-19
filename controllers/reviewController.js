@@ -11,3 +11,13 @@ exports.getAllReviews = catchAsync(async (req, res, next) => {
     }
   });
 });
+exports.createReviews = catchAsync(async (req, res, next) => {
+  const newReviews = await Review.find();
+  res.json({
+    status: 'success',
+    results: this.getAllReviews.length,
+    data: {
+      reviews
+    }
+  });
+});
